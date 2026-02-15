@@ -12,6 +12,17 @@ import { facultyListPage, facultyDetailPage } from './faculty/faculty.js';
 // Create a new router instance
 const router = Router();
 
+// Add catalog-specific styles to all catalog routes
+router.use('/catalog', (req, res, next) => {
+    res.addStyle('<link rel="stylesheet" href="/css/catalog.css">');
+    next();
+});
+
+router.use('/faculty', (req, res, next) => {
+    res.addStyle('<link rel="stylesheet" href="/css/faculty.css">', 10);
+    next();
+});
+
 // Home and basic pages
 router.get('/', homePage);
 router.get('/about', aboutPage);

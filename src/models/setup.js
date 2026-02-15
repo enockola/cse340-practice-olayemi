@@ -29,10 +29,18 @@ const setupDatabase = async () => {
         hasData = false;
     }
     
-    if (hasData) {
-        console.log('Database already seeded');
-        return true;
+    const practicePath = join(__dirname, 'sql', 'practice.sql');
+    if (fs.existsSync(practicePath)) {
+    const practiceSQL = fs.readFileSync(practicePath, 'utf8');
+    await db.query(practiceSQL);
+    console.log('Practice database tables initialized');
     }
+
+    if (hasData) {
+    console.log('Database already seeded');
+    return true;
+    }
+
     
     // No faculty found - run full seed
     console.log('Seeding database...');

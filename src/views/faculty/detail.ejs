@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 <main>
     <div class="faculty-profile">
+        <img class="faculty-photo" src="/images/faculty/<%= faculty.slug %>.jpg" alt="<%= faculty.name %>">
         <h1><%= faculty.name %></h1>
         <p class="faculty-title"><%= faculty.title %></p>
         <p class="faculty-department"><%= faculty.department %> Department</p>

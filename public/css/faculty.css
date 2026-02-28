@@ -1,3 +1,16 @@
+.faculty-card {
+    position: relative;
+}
+
+.faculty-photo {
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 7px;
+    background: url('https://placehold.co/480') center / cover no-repeat;
+}
+
 .faculty-sorting {
     display: flex;
     gap: 1rem;
